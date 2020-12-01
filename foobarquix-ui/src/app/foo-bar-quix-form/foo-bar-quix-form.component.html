@@ -1,3 +1,16 @@
-<div class="container"> 
-    To Be Completed
+<div class="container">
+    <form [formGroup]="checkoutForm">
+            <div class="form-group">
+
+                <label for="InputToConvert">Numberto convert</label>
+                <div class="input-group mb-3">
+                    <input #inputNumber type="text" class="form-control" formControlName="inputToConvert" aria-label="inputNumber">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="submitNumber(inputNumber.value)">Convert</button>
+
+        </form>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-light" *ngFor="let result of results">{{ result }}</li>
+        </ul>
 </div>
